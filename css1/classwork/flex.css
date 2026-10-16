@@ -1,8 +1,9 @@
 .container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   background-color: DodgerBlue;
   flex-wrap:wrap;
+  height: 800px;
 }
 
 .container div {

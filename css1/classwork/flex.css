@@ -1,7 +1,8 @@
 .container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
   background-color: DodgerBlue;
+  flex-wrap:wrap;
 }
 
 .container div {

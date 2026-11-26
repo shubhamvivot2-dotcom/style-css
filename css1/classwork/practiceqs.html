@@ -5,59 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* Mobile first (less than 600px): 1 column */
         .grid-container {
-            width:100vw;
-            height:100vh;
-            margin: 25px;
-            gap:100px;
+            width: 100%;
+            padding: 16px;
+            box-sizing: border-box;
             display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(3, 1fr);}
-            .card{
-             width: 400px;
-                height: 400px;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
 
-                border: 1px solid #ccc;
+        .card {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            aspect-ratio: 4 / 5;
+            border: 1px solid #ccc;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+    
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .card img {
+
+            .card {
+                max-width: none;
+                margin: 0;
+            }
+        }
+
+        
+        @media (min-width: 769px) {
+            .grid-container {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 24px;
+                gap: 24px;
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            @media (max-width: 768px) {
-                .grid-container {
-                    width: 100%;
-                    height: auto;
-                    margin: 0;
-                    padding: 16px;
-                    box-sizing: border-box;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 16px;
-                }
-
-                .card {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 4 / 5;
-                }
+            .card {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+                aspect-ratio: 1 / 1;
             }
-
-            @media (max-width: 600px) {
-                .grid-container {
-                    grid-template-columns: 1fr;
-                }
-
-                .card {
-                    max-width: 400px;
-                    margin: 0 auto;
-                }
-            }
+        }
     </style>
 </head>
 <body>
-    <div class="grid-container" ;">
+    <div class="grid-container">
        <div class="card">
             <img src="WhatsApp Image 2026-11-26 at 9.39.37 AM.jpeg" alt="Navy Blazer Studio">
         </div>
